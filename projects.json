@@ -1,0 +1,96 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Limit Order Book & Matching Engine",
+      "tech": "C++17/20",
+      "description": "FIFO matching engine with cache-line alignment, data-oriented design, and hot-path allocation elimination via slab memory pools.",
+      "metrics": [
+        { "value": "42ns", "label": "p50 latency" },
+        { "value": "250ns", "label": "p99 latency" },
+        { "value": "O(1)", "label": "top-of-book" }
+      ],
+      "github": "https://github.com/Anjaniputra15/Low-Latency-Order-Matching-Engine",
+      "featured": true,
+      "date": "2025-03"
+    },
+    {
+      "id": 2,
+      "name": "HFT Execution Simulator",
+      "tech": "C++23",
+      "description": "Event-driven backtesting framework with deterministic microsecond-resolution replay and lock-free SPSC ring buffers.",
+      "metrics": [
+        { "value": "1M+", "label": "events/sec" },
+        { "value": "Zero", "label": "contention" }
+      ],
+      "github": "https://github.com/Anjaniputra15/cpp-backtesting-framework",
+      "featured": true,
+      "date": "2025-04"
+    },
+    {
+      "id": 3,
+      "name": "Arena-Based Vector Library",
+      "tech": "C",
+      "description": "Custom arena allocator and dynamic vector with bump-pointer allocation for zero-fragmentation memory management.",
+      "metrics": [
+        { "value": "Zero", "label": "fragmentation" },
+        { "value": "RAII", "label": "lifetime mgmt" }
+      ],
+      "github": "https://github.com/Anjaniputra15/Arena-Vector-Library",
+      "featured": true,
+      "date": "2025-04"
+    },
+    {
+      "id": 4,
+      "name": "MEDICO - Medical Diagnostic System",
+      "tech": "Python",
+      "description": "Multi-agent AI diagnostic pipeline using ensemble LLM reasoning with Neo4j knowledge graph for explainable inference.",
+      "metrics": [
+        { "value": "88%", "label": "accuracy" },
+        { "value": "Neo4j", "label": "knowledge graph" }
+      ],
+      "github": "https://github.com/Anjaniputra15/MEDICO",
+      "featured": true,
+      "date": "2025-06"
+    },
+    {
+      "id": 5,
+      "name": "Service Telemetry Monitor",
+      "tech": "Python / FastAPI",
+      "description": "Real-time service health monitoring dashboard with async polling, Discord webhook alerting, and latency visualization.",
+      "metrics": [
+        { "value": "Real-time", "label": "monitoring" },
+        { "value": "Async", "label": "architecture" }
+      ],
+      "github": "https://github.com/Anjaniputra15/Analysis-Monitor",
+      "featured": false,
+      "date": "2024-12"
+    },
+    {
+      "id": 6,
+      "name": "Scinterweb Analytics Platform",
+      "tech": "TypeScript / React",
+      "description": "Production analytics frontend with real-time charting, user session management, and responsive dashboards.",
+      "metrics": [
+        { "value": "500+", "label": "beta users" },
+        { "value": "React", "label": "frontend" }
+      ],
+      "github": "https://github.com/Anjaniputra15/scinterweb-app",
+      "featured": false,
+      "date": "2025-03"
+    }
+  ],
+  "_instructions": {
+    "how_to_add": "Copy a project object, update the fields, and increment the id. Then run 'node generate-projects.js' to rebuild the HTML.",
+    "fields": {
+      "id": "Unique number",
+      "name": "Project title",
+      "tech": "Main technology (shown as badge)",
+      "description": "1-2 sentence description",
+      "metrics": "Array of {value, label} pairs (max 3)",
+      "github": "GitHub URL",
+      "featured": "true = show on homepage, false = projects page only",
+      "date": "YYYY-MM format for sorting"
+    }
+  }
+}

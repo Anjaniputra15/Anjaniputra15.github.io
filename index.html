@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush Parashar | Software Engineer | Low-Latency Systems</title>
+    <meta name="description" content="Software Engineer specializing in low-latency trading systems, C++, and AI/ML. Building microsecond-latency infrastructure at the intersection of finance and technology.">
+    <meta name="keywords" content="software engineer, HFT, low-latency, C++, Python, quantitative developer, algorithmic trading">
+    <meta property="og:title" content="Aayush Parashar | Software Engineer">
+    <meta property="og:description" content="Building microsecond-latency trading systems and AI infrastructure">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+</head>
+<body>
+    <!-- Animated Background -->
+    <canvas id="matrix-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">AP</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#streak">Streak</a>
+                <a href="#research">Research</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Live Ticker -->
+    <div class="ticker-wrapper">
+        <div class="ticker">
+            <div class="ticker-content">
+                <span class="ticker-item up">LATENCY <span class="value">42ns</span> <span class="change">-33%</span></span>
+                <span class="ticker-item up">THROUGHPUT <span class="value">1M+</span> <span class="change">evt/s</span></span>
+                <span class="ticker-item up">CACHE_MISS <span class="value">-38%</span> <span class="change">optimized</span></span>
+                <span class="ticker-item up">P99 <span class="value">250ns</span> <span class="change">stable</span></span>
+                <span class="ticker-item up">CONCURRENT <span class="value">1000</span> <span class="change">req/s</span></span>
+                <span class="ticker-item up">COMPRESSION <span class="value">48x</span> <span class="change">ratio</span></span>
+                <span class="ticker-item up">UPTIME <span class="value">99.5%</span> <span class="change">SLA</span></span>
+                <span class="ticker-item up">SHARPE <span class="value">2.1</span> <span class="change">ratio</span></span>
+            </div>
+            <div class="ticker-content">
+                <span class="ticker-item up">LATENCY <span class="value">42ns</span> <span class="change">-33%</span></span>
+                <span class="ticker-item up">THROUGHPUT <span class="value">1M+</span> <span class="change">evt/s</span></span>
+                <span class="ticker-item up">CACHE_MISS <span class="value">-38%</span> <span class="change">optimized</span></span>
+                <span class="ticker-item up">P99 <span class="value">250ns</span> <span class="change">stable</span></span>
+                <span class="ticker-item up">CONCURRENT <span class="value">1000</span> <span class="change">req/s</span></span>
+                <span class="ticker-item up">COMPRESSION <span class="value">48x</span> <span class="change">ratio</span></span>
+                <span class="ticker-item up">UPTIME <span class="value">99.5%</span> <span class="change">SLA</span></span>
+                <span class="ticker-item up">SHARPE <span class="value">2.1</span> <span class="change">ratio</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="terminal-badge">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-text">~/aayush $ ./portfolio --run</span>
+            </div>
+            <p class="hero-greeting animate-fade-in">Hi, I'm</p>
+            <h1 class="hero-name animate-slide-up">Aayush Parashar</h1>
+            <h2 class="hero-title">
+                <span class="typing-text"></span>
+                <span class="cursor">|</span>
+            </h2>
+            <p class="hero-tagline">Building microsecond-latency trading infrastructure and AI systems.<br>Specialized in C++, systems programming, and quantitative development.</p>
+
+            <div class="tech-badges">
+                <span class="badge">C++17/20/23</span>
+                <span class="badge">Python</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">SIMD</span>
+                <span class="badge">Lock-Free</span>
+                <span class="badge">PyTorch</span>
+            </div>
+
+            <!-- Mini Candlestick Chart -->
+            <div class="mini-chart">
+                <div class="candle green" style="--height: 40px; --wick-top: 15px; --wick-bottom: 10px; --delay: 0s;"></div>
+                <div class="candle red" style="--height: 25px; --wick-top: 20px; --wick-bottom: 8px; --delay: 0.1s;"></div>
+                <div class="candle green" style="--height: 55px; --wick-top: 10px; --wick-bottom: 15px; --delay: 0.2s;"></div>
+                <div class="candle green" style="--height: 35px; --wick-top: 25px; --wick-bottom: 5px; --delay: 0.3s;"></div>
+                <div class="candle red" style="--height: 20px; --wick-top: 18px; --wick-bottom: 12px; --delay: 0.4s;"></div>
+                <div class="candle green" style="--height: 60px; --wick-top: 8px; --wick-bottom: 20px; --delay: 0.5s;"></div>
+                <div class="candle green" style="--height: 45px; --wick-top: 12px; --wick-bottom: 10px; --delay: 0.6s;"></div>
+                <div class="candle red" style="--height: 30px; --wick-top: 22px; --wick-bottom: 15px; --delay: 0.7s;"></div>
+                <div class="candle green" style="--height: 50px; --wick-top: 10px; --wick-bottom: 8px; --delay: 0.8s;"></div>
+                <div class="candle green" style="--height: 70px; --wick-top: 5px; --wick-bottom: 12px; --delay: 0.9s;"></div>
+            </div>
+
+            <div class="hero-links">
+                <a href="https://github.com/Anjaniputra15" target="_blank" class="btn btn-primary magnetic">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/aayush-parashar1307/" target="_blank" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="mailto:Aayush.parashar@student.torrens.edu.au" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                    Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a <strong>Software Engineer</strong> based in Sydney, Australia, specializing in <strong>low-latency systems</strong>, <strong>quantitative development</strong>, and <strong>AI/ML infrastructure</strong>.</p>
+                    <p>Currently pursuing a B.I.T at Torrens University (WAM 85 - High Distinction) with a 50% Merit Scholarship, graduating July 2027.</p>
+                    <p>My work spans from building nanosecond-latency order matching engines to deploying real-time AI inference systems handling 1,000+ concurrent requests.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <span class="highlight-number">42ns</span>
+                        <span class="highlight-label">p50 Matching Engine Latency</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-number">1K+</span>
+                        <span class="highlight-label">Concurrent Requests Handled</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-number">39th</span>
+                        <span class="highlight-label">SIG Algothon 2025 Rank</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-number">501</span>
+                        <span class="highlight-label">All India Rank (150K+)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span>C++17/20/23</span>
+                        <span>C</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>TypeScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Low-Latency Systems</h3>
+                    <div class="skill-tags">
+                        <span>Cache-Line Alignment</span>
+                        <span>Lock-Free Queues</span>
+                        <span>SIMD (AVX-512/NEON)</span>
+                        <span>NUMA-Aware Design</span>
+                        <span>Slab Allocators</span>
+                        <span>Memory Ordering</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Profiling & Benchmarking</h3>
+                    <div class="skill-tags">
+                        <span>Linux perf</span>
+                        <span>DTrace</span>
+                        <span>FlameGraphs</span>
+                        <span>Google Benchmark</span>
+                        <span>CPU Pinning</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Quantitative</h3>
+                    <div class="skill-tags">
+                        <span>Kalman Filtering</span>
+                        <span>Monte Carlo</span>
+                        <span>Stochastic Processes</span>
+                        <span>Time-Series Analysis</span>
+                        <span>Risk Metrics</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span>Linux</span>
+                        <span>Docker</span>
+                        <span>Redis</span>
+                        <span>PostgreSQL</span>
+                        <span>FastAPI</span>
+                        <span>CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>AI/ML</h3>
+                    <div class="skill-tags">
+                        <span>INT8 Quantization</span>
+                        <span>ARM64 Deployment</span>
+                        <span>PyTorch</span>
+                        <span>TensorFlow</span>
+                        <span>Neo4j</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3>AI Research Engineer</h3>
+                            <p class="company">Signal Processing Lab, Torrens University</p>
+                        </div>
+                        <span class="date">Jul 2025 - Present</span>
+                    </div>
+                    <ul class="experience-points">
+                        <li>Refactored inference pipelines to <strong>Structure-of-Arrays (SoA)</strong> layouts, reducing L2 cache misses by <strong>38%</strong> and median latency by <strong>33%</strong> (12us to 8us)</li>
+                        <li>Deployed <strong>INT8-quantized models</strong> on ARM64 (NEON); optimized ECG signal compression achieving up to <strong>48x</strong> ratio</li>
+                        <li>Scaled real-time inference to <strong>1,000 concurrent requests</strong> with p99 100ms; improved calibration (ECE 0.433 to 0.127)</li>
+                        <li>Benchmarked deployment: <strong>16.2ms (V100)</strong>, <strong>47ms (T4)</strong> for cost-performance analysis</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Software Engineer (Founding Team)</h3>
+                            <p class="company">Scinter (AI Startup)</p>
+                        </div>
+                        <span class="date">Dec 2024 - Mar 2025</span>
+                    </div>
+                    <ul class="experience-points">
+                        <li>Architected analytics backend handling <strong>10K+ daily queries</strong>; Redis caching + PostgreSQL optimization reduced p95 latency by <strong>67%</strong> (600ms to 200ms)</li>
+                        <li>Implemented <strong>blue-green CI/CD</strong> pipelines with Docker and automated rollback, maintaining <strong>99.5% uptime</strong></li>
+                        <li>Designed async data ingestion layer using <strong>FastAPI + AsyncIO</strong> for high-throughput event processing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Limit Order Book & Matching Engine</h3>
+                        <span class="project-tech">C++17/20</span>
+                    </div>
+                    <p>FIFO matching engine with cache-line alignment, data-oriented design, and hot-path allocation elimination via slab memory pools.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">42ns</span>
+                            <span class="metric-label">p50 latency</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">250ns</span>
+                            <span class="metric-label">p99 latency</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">O(1)</span>
+                            <span class="metric-label">top-of-book</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AayushParashar1307/Low-Latency-Order-Matching-Engine" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>HFT Execution Simulator</h3>
+                        <span class="project-tech">C++23</span>
+                    </div>
+                    <p>Event-driven backtesting framework with deterministic microsecond-resolution replay and lock-free SPSC ring buffers.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">1M+</span>
+                            <span class="metric-label">events/sec</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Zero</span>
+                            <span class="metric-label">contention</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AayushParashar1307/cpp-backtesting-framework" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Arena-Based Vector Library</h3>
+                        <span class="project-tech">C</span>
+                    </div>
+                    <p>Custom arena allocator and dynamic vector with bump-pointer allocation for zero-fragmentation memory management.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">Zero</span>
+                            <span class="metric-label">fragmentation</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">RAII</span>
+                            <span class="metric-label">lifetime mgmt</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AayushParashar1307/Arena-Vector-Library" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>MEDICO - Medical Diagnostic System</h3>
+                        <span class="project-tech">Python</span>
+                    </div>
+                    <p>Multi-agent AI diagnostic pipeline using ensemble LLM reasoning with Neo4j knowledge graph for explainable inference.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">88%</span>
+                            <span class="metric-label">accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Neo4j</span>
+                            <span class="metric-label">knowledge graph</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AayushParashar1307/MEDICO" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Service Telemetry Monitor</h3>
+                        <span class="project-tech">Python / FastAPI</span>
+                    </div>
+                    <p>Real-time service health monitoring dashboard with async polling, Discord webhook alerting, and latency visualization.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">Real-time</span>
+                            <span class="metric-label">monitoring</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Async</span>
+                            <span class="metric-label">architecture</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AayushParashar1307/Analysis-Monitor" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Scinterweb Analytics Platform</h3>
+                        <span class="project-tech">TypeScript / React</span>
+                    </div>
+                    <p>Production analytics frontend with real-time charting, user session management, and responsive dashboards.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">500+</span>
+                            <span class="metric-label">beta users</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">React</span>
+                            <span class="metric-label">frontend</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/AayushParashar1307/scinterweb-app" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section">
+        <div class="container">
+            <h2 class="section-title">Research & Publications</h2>
+            <div class="research-list">
+                <div class="research-card">
+                    <span class="research-status status-review">Under Review</span>
+                    <h3>ECG-ASQ-LLM: Adaptive Semantic Quantization</h3>
+                    <p class="research-venue">IEEE Transactions on Biomedical Engineering, 2025</p>
+                    <p>Scaled to 1K concurrent requests; deployment latency: 16.2ms (V100), 47ms (T4)</p>
+                </div>
+                <div class="research-card">
+                    <span class="research-status status-working">Working Paper</span>
+                    <h3>QHeartAI: Physics-Inspired Mathematics for ECG Analysis</h3>
+                    <p class="research-venue">DOI available on request, 2025</p>
+                    <p>Interpretable framework using unitary transforms and complex-valued representations for lead coupling invariants</p>
+                </div>
+                <div class="research-card">
+                    <span class="research-status status-prep">In Preparation</span>
+                    <h3>Sleep-LLM: Automated Sleep Stage Classification</h3>
+                    <p class="research-venue">2025</p>
+                    <p>End-to-end EEG pipeline for 5-class sleep staging using transformer-based modelling on Sleep-EDF dataset</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">🏆</div>
+                    <h3>SIG Algothon 2025</h3>
+                    <p>Team Rank 39th / 240 (Top 16%)</p>
+                    <span class="award-detail">Mean-reversion strategies using Kalman-filtered signals</span>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🎓</div>
+                    <h3>Government of India Scholarship</h3>
+                    <p>$10,000 Meritorious Candidate</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">📊</div>
+                    <h3>All India Rank 501</h3>
+                    <p>UPTU/AKTU Entrance Exam</p>
+                    <span class="award-detail">Out of 150,000+ candidates</span>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🧮</div>
+                    <h3>Mathematics Olympiad</h3>
+                    <p>5x School Champion</p>
+                    <span class="award-detail">Uttar Pradesh State 3rd Place</span>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🍎</div>
+                    <h3>Apple Foundation Program</h3>
+                    <p>Completed Sep 2024</p>
+                    <span class="award-detail">Swift, app design, product thinking</span>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">💰</div>
+                    <h3>50% Merit Scholarship</h3>
+                    <p>Torrens University Australia</p>
+                    <span class="award-detail">WAM 85 (High Distinction)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Streak Section -->
+    <section id="streak" class="section">
+        <div class="container">
+            <h2 class="section-title">Learning Streak</h2>
+            <p class="streak-intro">What I'm currently learning and building. Updated regularly.</p>
+
+            <!-- Streak Counter -->
+            <div class="streak-counter">
+                <div class="streak-flame">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2c0 4-4 6-4 10a4 4 0 0 0 8 0c0-4-4-6-4-10z"/>
+                        <path d="M12 12c0 2-2 3-2 5a2 2 0 0 0 4 0c0-2-2-3-2-5z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="streak-info">
+                    <span class="streak-number" id="streakCount">0</span>
+                    <span class="streak-label">Day Streak</span>
+                </div>
+                <div class="streak-best">
+                    <span class="best-label">Best</span>
+                    <span class="best-number">45 days</span>
+                </div>
+            </div>
+
+            <!-- Contribution Grid (GitHub style) -->
+            <div class="contribution-wrapper">
+                <h3>Activity This Year</h3>
+                <div class="contribution-grid" id="contributionGrid">
+                    <!-- Generated by JavaScript -->
+                </div>
+                <div class="contribution-legend">
+                    <span>Less</span>
+                    <div class="legend-box level-0"></div>
+                    <div class="legend-box level-1"></div>
+                    <div class="legend-box level-2"></div>
+                    <div class="legend-box level-3"></div>
+                    <div class="legend-box level-4"></div>
+                    <span>More</span>
+                </div>
+            </div>
+
+            <!-- Currently Learning -->
+            <div class="learning-grid">
+                <div class="learning-card active">
+                    <div class="learning-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L1.75 6v12L12 24l10.25-6V6L12 0zm0 2.25l7.5 4.5v9L12 20.25l-7.5-4.5v-9l7.5-4.5z"/></svg>
+                    </div>
+                    <div class="learning-content">
+                        <h4>FPGA Development</h4>
+                        <p>Verilog/VHDL for ultra-low latency market data processing</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 35%"></div>
+                        </div>
+                        <span class="progress-label">35% Complete</span>
+                    </div>
+                    <span class="learning-status">In Progress</span>
+                </div>
+
+                <div class="learning-card active">
+                    <div class="learning-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="learning-content">
+                        <h4>Rust for Systems Programming</h4>
+                        <p>Memory safety without garbage collection for trading systems</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                        <span class="progress-label">60% Complete</span>
+                    </div>
+                    <span class="learning-status">In Progress</span>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .29.71l3 3a1 1 0 0 0 1.42-1.42L13 11.59V7a1 1 0 0 0-1-1z"/></svg>
+                    </div>
+                    <div class="learning-content">
+                        <h4>Derivative Contracts</h4>
+                        <p>Options pricing, Greeks, and volatility modeling</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%"></div>
+                        </div>
+                        <span class="progress-label">20% Complete</span>
+                    </div>
+                    <span class="learning-status upcoming">Upcoming</span>
+                </div>
+
+                <div class="learning-card completed">
+                    <div class="learning-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    </div>
+                    <div class="learning-content">
+                        <h4>Lock-Free Data Structures</h4>
+                        <p>SPSC/MPMC queues, atomic operations, memory ordering</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="progress-label">Completed</span>
+                    </div>
+                    <span class="learning-status done">Done</span>
+                </div>
+            </div>
+
+            <!-- Add New Learning Goal -->
+            <div class="add-learning">
+                <p>Want to suggest what I should learn next?</p>
+                <a href="mailto:Aayush.parashar@student.torrens.edu.au?subject=Learning Suggestion" class="btn btn-secondary">
+                    Suggest a Topic
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">I'm currently open to opportunities in quantitative development, low-latency systems engineering, and AI/ML infrastructure roles.</p>
+            <div class="contact-links">
+                <a href="mailto:Aayush.parashar@student.torrens.edu.au" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                    <span>Aayush.parashar@student.torrens.edu.au</span>
+                </a>
+                <a href="https://github.com/AayushParashar1307" target="_blank" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/AayushParashar1307" target="_blank" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+            <p class="contact-location">Sydney, AU | +61 416 360 675</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Aayush Parashar. Built with performance in mind.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ============ MATRIX RAIN BACKGROUND ============
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = '01アイウエオカキクケコ$¥€£∑∏∫∂√∞≈≠±×÷';
+        const charArray = chars.split('');
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * -100;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#10b981';
+            ctx.font = fontSize + 'px JetBrains Mono';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = charArray[Math.floor(Math.random() * charArray.length)];
+                const x = i * fontSize;
+                const y = drops[i] * fontSize;
+                const alpha = Math.min(1, drops[i] / 50);
+                ctx.fillStyle = `rgba(16, 185, 129, ${alpha * 0.3})`;
+                ctx.fillText(text, x, y);
+
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // ============ TYPING EFFECT ============
+        const titles = [
+            'Software Engineer | Low-Latency Systems',
+            'Building 42ns Matching Engines',
+            'Quantitative Developer',
+            'AI/ML Infrastructure Engineer'
+        ];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.querySelector('.typing-text');
+
+        function typeEffect() {
+            const currentTitle = titles[titleIndex];
+
+            if (isDeleting) {
+                typingElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 80;
+
+            if (!isDeleting && charIndex === currentTitle.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        typeEffect();
+
+        // ============ CONTRIBUTION GRID ============
+        function generateContributionGrid() {
+            const grid = document.getElementById('contributionGrid');
+            const weeks = 52;
+            const days = 7;
+
+            for (let w = 0; w < weeks; w++) {
+                const week = document.createElement('div');
+                week.className = 'contribution-week';
+
+                for (let d = 0; d < days; d++) {
+                    const day = document.createElement('div');
+                    day.className = 'contribution-day';
+
+                    // Random activity level (weighted towards lower)
+                    const rand = Math.random();
+                    let level;
+                    if (rand < 0.3) level = 0;
+                    else if (rand < 0.5) level = 1;
+                    else if (rand < 0.7) level = 2;
+                    else if (rand < 0.9) level = 3;
+                    else level = 4;
+
+                    day.classList.add('level-' + level);
+
+                    // Tooltip
+                    const date = new Date();
+                    date.setDate(date.getDate() - ((weeks - w) * 7 + (days - d)));
+                    day.title = date.toDateString();
+
+                    week.appendChild(day);
+                }
+                grid.appendChild(week);
+            }
+        }
+
+        generateContributionGrid();
+
+        // ============ STREAK COUNTER ============
+        function animateStreak() {
+            const streakEl = document.getElementById('streakCount');
+            const target = 23; // Current streak
+            let current = 0;
+
+            const interval = setInterval(() => {
+                current++;
+                streakEl.textContent = current;
+                if (current >= target) {
+                    clearInterval(interval);
+                }
+            }, 50);
+        }
+
+        // Trigger when streak section is visible
+        const streakObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStreak();
+                    streakObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const streakSection = document.getElementById('streak');
+        if (streakSection) {
+            streakObserver.observe(streakSection);
+        }
+
+        // ============ SCROLL ANIMATIONS ============
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.project-card, .experience-card, .research-card, .skill-category, .award-card, .highlight-card, .learning-card').forEach(el => {
+            el.classList.add('animate-on-scroll');
+            scrollObserver.observe(el);
+        });
+
+        // ============ SMOOTH SCROLLING ============
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ============ NAVBAR ON SCROLL ============
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // ============ MAGNETIC BUTTONS ============
+        document.querySelectorAll('.magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
+</body>
+</html>
