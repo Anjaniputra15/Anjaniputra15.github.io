@@ -816,8 +816,55 @@ body {
 }
 
 .award-icon {
-    font-size: 2rem;
-    margin-bottom: 12px;
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.award-card:hover .award-icon {
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.award-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.award-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.award-icon.sig-icon {
+    background: linear-gradient(135deg, #002D62, #0052B4);
+}
+
+.award-icon.india-icon {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+.award-icon.aktu-icon {
+    background: linear-gradient(135deg, #1a237e, #3949AB);
+}
+
+.award-icon.math-icon {
+    background: linear-gradient(135deg, #7B5A00, #D4A017);
+}
+
+.award-icon.apple-icon {
+    background: linear-gradient(135deg, #1c1c1e, #48484a);
+}
+
+.award-icon.torrens-icon {
+    background: linear-gradient(135deg, #B83400, #F05A28);
 }
 
 .award-card h3 {
