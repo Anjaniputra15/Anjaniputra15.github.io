@@ -14,3 +14,7 @@ package-lock.json
 
 # Logs
 *.log
+
+# Environment variables (NEVER commit these)
+.env
+backend/.env
