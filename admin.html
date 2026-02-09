@@ -310,6 +310,7 @@
         <div class="top-bar-actions">
             <a href="posts.html" target="_blank">↗ View Blog</a>
             <a href="index.html">↗ Portfolio</a>
+            <button class="btn btn-sm" style="border:1px solid var(--border); background:transparent; color:var(--text-muted)" id="change-password-btn">Change Password</button>
             <button class="btn btn-danger btn-sm" id="logout-btn">Logout</button>
         </div>
     </div>
@@ -360,6 +361,30 @@
             <span id="posts-count" style="font-size:0.85rem; color:var(--text-muted); font-family:'JetBrains Mono',monospace;"></span>
         </div>
         <div id="posts-list"></div>
+    </div>
+
+    <!-- Password Change Modal -->
+    <div id="password-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; display:none; align-items:center; justify-content:center;">
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; max-width:400px; width:90%;">
+            <h2 style="font-family:'JetBrains Mono',monospace; font-size:1rem; color:var(--green); margin-bottom:24px;">Change Password</h2>
+            <div class="form-group">
+                <label>CURRENT PASSWORD</label>
+                <input type="password" id="current-password" placeholder="••••••••">
+            </div>
+            <div class="form-group">
+                <label>NEW PASSWORD</label>
+                <input type="password" id="new-password" placeholder="••••••••">
+            </div>
+            <div class="form-group">
+                <label>CONFIRM NEW PASSWORD</label>
+                <input type="password" id="confirm-password" placeholder="••••••••">
+            </div>
+            <p class="error-msg" id="password-error"></p>
+            <div style="display:flex; gap:12px; margin-top:20px;">
+                <button class="btn btn-primary btn-sm" id="save-password-btn">Save</button>
+                <button class="btn btn-sm" style="border:1px solid var(--border); background:transparent; color:var(--text-muted)" id="cancel-password-btn">Cancel</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -567,6 +592,58 @@
     function formatDate(d) {
         return new Date(d).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
     }
+
+    // ---- PASSWORD CHANGE ----
+    const passwordModal = document.getElementById('password-modal');
+    document.getElementById('change-password-btn').addEventListener('click', () => {
+        passwordModal.style.display = 'flex';
+        document.getElementById('current-password').value = '';
+        document.getElementById('new-password').value = '';
+        document.getElementById('confirm-password').value = '';
+        document.getElementById('password-error').style.display = 'none';
+    });
+
+    document.getElementById('cancel-password-btn').addEventListener('click', () => {
+        passwordModal.style.display = 'none';
+    });
+
+    document.getElementById('save-password-btn').addEventListener('click', async () => {
+        const errEl = document.getElementById('password-error');
+        const current = document.getElementById('current-password').value;
+        const newPass = document.getElementById('new-password').value;
+        const confirm = document.getElementById('confirm-password').value;
+
+        if (!current || !newPass || !confirm) {
+            showError(errEl, 'All fields required');
+            return;
+        }
+
+        if (newPass !== confirm) {
+            showError(errEl, 'New passwords do not match');
+            return;
+        }
+
+        if (newPass.length < 8) {
+            showError(errEl, 'Password must be at least 8 characters');
+            return;
+        }
+
+        try {
+            const res = await fetch(`${API}/change-password`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+                body: JSON.stringify({ currentPassword: current, newPassword: newPass })
+            });
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.error);
+
+            alert('Password changed successfully!');
+            passwordModal.style.display = 'none';
+        } catch (err) {
+            showError(errEl, err.message);
+        }
+    });
 
     checkAuth();
 </script>
